@@ -1,0 +1,48 @@
+{
+  "name": "callee",
+  "version": "0.1.0",
+  "description": "React Components for data-fetching using axios, redux, redux-thunk and reselect",
+  "input": "src/index.js",
+  "main": "build/lib/bundle.js",
+  "scripts": {
+    "build": "rollup -c",
+    "start": "rollup -c -w",
+    "clean": "rm -rf ./build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nhtb/callee.git"
+  },
+  "keywords": [
+    "axios",
+    "redux",
+    "react",
+    "fetch",
+    "component",
+    "cache",
+    "reselect",
+    "redux-thunk"
+  ],
+  "author": "Batuhan Toparlak",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/cli": "7.2.3",
+    "@babel/core": "7.2.2",
+    "@babel/node": "7.2.2",
+    "@babel/plugin-proposal-decorators": "7.2.3",
+    "@babel/plugin-proposal-object-rest-spread": "7.2.0",
+    "@babel/preset-env": "7.2.3",
+    "axios": "0.18.0",
+    "babel-loader": "8.0.4",
+    "react": "16.7.0",
+    "react-redux": "6.0.0",
+    "redux": "4.0.1",
+    "redux-thunk": "2.3.0",
+    "reselect": "4.0.0",
+    "rollup": "1.0.0",
+    "rollup-plugin-babel": "4.2.0",
+    "rollup-plugin-commonjs": "9.2.0",
+    "rollup-plugin-node-resolve": "4.0.0",
+    "rollup-plugin-terser": "3.0.0"
+  }
+}
