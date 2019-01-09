@@ -18,12 +18,6 @@
         ]
     ],
     "plugins": [
-        "@babel/proposal-object-rest-spread",
-        [
-            "@babel/plugin-proposal-decorators",
-            {
-                "legacy": true
-            }
-        ]
+        "@babel/proposal-object-rest-spread"
     ]
 }
