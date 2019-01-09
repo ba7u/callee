@@ -7,3 +7,7 @@ export function to(promise) {
 export function executeIfValid(func, params) {
     func instanceof Function && func(params);
 }
+
+export function isvalidobject(obj) {
+    return typeof obj !== "undefined" && Object.keys(obj).length > 0;
+}

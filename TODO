@@ -1,7 +1,8 @@
-☐ pass store to components
+✔ pass store to components via Context API @done(19-01-03 16:15)
 ☐ rollup optimization
 ☐ write tests
 ☐ support all requests
 ☐ Call API w/o components
-☐ reselect implementation
-☐ reselect API
+    ✔ getter @done(19-01-03 16:15)
+✔ reselect implementation @done(19-01-03 16:15)
+✔ reselect API @done(19-01-03 16:15)

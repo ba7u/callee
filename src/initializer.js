@@ -1,8 +1,9 @@
-import Base from "./base";
+import React from "react";
+import Base from "./api";
 
 const ApiBase = new Base();
 
-export function Initializer({ baseURL, withCredentials, store }) {
+export function Initializer({ baseURL, withCredentials, store, context }) {
     try {
         if (typeof baseURL === "undefined") {
             throw new Error("baseURL cannot be empty.");
@@ -11,7 +12,8 @@ export function Initializer({ baseURL, withCredentials, store }) {
         ApiBase.createInstance({
             baseURL,
             credentials: withCredentials || false,
-            store
+            store,
+            context
         });
 
     } catch (err) {
@@ -19,4 +21,4 @@ export function Initializer({ baseURL, withCredentials, store }) {
     }
 }
 
-export default ApiBase;
+export { ApiBase as API };

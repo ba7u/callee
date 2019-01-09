@@ -1,5 +1,5 @@
-import API from "./api";
-import { to } from "./helper";
+import { API } from "../initializer";
+import { to } from "../helper";
 import CONST from "./const";
 
 export function callService(name, method, { target, params, config, external }) {
@@ -7,7 +7,7 @@ export function callService(name, method, { target, params, config, external }) 
         dispatch(contentRequest(name, method));
         const [err, result] = await to(API[method]({ target, params, config, external }));
         if (err !== null) {
-            return dispatch(contentFailure(name, err.message));
+            return dispatch(contentFailure(name, err));
         }
         return dispatch(contentSuccess(name, result));
     }

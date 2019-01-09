@@ -1,6 +1,6 @@
 import CONST from "./const";
 
-export function reducer(state = {}, action) {
+export default function(state = {}, action) {
     switch (action.type) {
         case CONST.REQUEST:
             return {

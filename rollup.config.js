@@ -1,4 +1,4 @@
-import nodeResolve from "rollup-plugin-node-resolve";
+import resolve from "rollup-plugin-node-resolve";
 import babel from "rollup-plugin-babel"
 import commonjs from "rollup-plugin-commonjs";
 import { terser } from "rollup-plugin-terser";
@@ -10,6 +10,7 @@ const output = {
 }
 
 const getRelatedOutput = (subfolder, extension = "js") => `${output.folder}/${subfolder}/${output.name}.${extension}`;
+
 
 const external = [
     ...Object.keys(pkg.dependencies || {}),
@@ -24,14 +25,16 @@ export default [{
         format: "cjs",
     },
     external,
-    plugins: [babel(), commonjs()]
+    plugins: [
+        babel(),
+        commonjs()
+    ]
 }, {
     input: pkg.input,
     output: {
         name: pkg.name,
         file: getRelatedOutput("es"),
-        format: "es",
-        indent: false
+        format: "es"
     },
     external,
     plugins: [babel()]
@@ -40,14 +43,11 @@ export default [{
     output: {
         name: pkg.name,
         file: getRelatedOutput("es", "mjs"),
-        format: "es",
-        indent: false
+        format: "es"
     },
     external,
     plugins: [
-        nodeResolve({
-            jsnext: true
-        }),
+        resolve({ jsnext: true }),
         terser({
             compress: {
                 pure_getters: true,
@@ -66,9 +66,9 @@ export default [{
         globals: {
             "react": "React",
             "axios": "axios",
-            "react-redux": "react-redux"
-        },
-        indent: false
+            "react-redux": "react-redux",
+            "reselect": "reselect"
+        }
     },
     external,
     plugins: [
